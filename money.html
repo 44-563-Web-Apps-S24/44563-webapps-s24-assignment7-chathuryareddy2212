@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>WEB APPS LAB 7</title>
-  <style>
-    body {
+    <title>WEB APPS LAB 7</title>
+    <style>
+        body {
             font-family: 'Times New Roman', Times, serif;
             margin: 0;
             padding: 0;
@@ -11,7 +12,7 @@
         }
 
         header {
-            background-color:lightpink;
+            background-color: lightpink;
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -46,147 +47,122 @@
         #clickHelp,
         #help {
             cursor: pointer;
-            color:orange;
+            color: orange;
             text-decoration: underline;
         }
 
         #clickHelp:hover,
         #help:hover {
-            color:lightblue;
+            color: lightblue;
         }
 
         #score,
         #locations {
             font-weight: bold;
-            color:orange;
+            color: orange;
         }
+
         .row {
             display: flex;
             justify-content: center;
         }
 
         .location {
-            width: 100px;
+            width: 130px;
             height: 100px;
-            margin: 10px;
+            margin: 30px;
+            margin-left: 30px;
+            padding: 10px;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-image: url('Building.jpg'); 
+            overflow: hidden;
         }
     </style>
-    
-       </head>
-     <body>
-        <h1>Find the coins by Chathurya Reddy Aenugu</h1>
-        <div id="instructions">
-            <p>Click on the locations to find coins, beware the monster</p>
-        </div>
-    
-     <main>
+
+</head>
+
+<body>
+    <h1>Find the coins by Chathurya Reddy Aenugu</h1>
+    <div id="instructions">
+        <p>Click on the locations to find coins, beware the monster</p>
+    </div>
+
+    <main>
         <div class="container"></div>
-            <div class="box" id="locations">
-                <p>Number of locations checked is zero.</p>
-            </div>
-            <div class="box" id="score">
-                <p>Score is zero.</p>
-            </div>
-            <div class="box" id="clickHelp">
-                <p>Click for help.</p>
-            </div>
-            <div class="box" id="help">
-                <p>Help report</p>
-            </div>
-             <div class="row">
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
+        <div class="box" id="locations">
+            <p>Number of locations checked is zero.</p>
         </div>
-   
-        <div class="row">
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
+        <div class="box" id="score">
+            <p>Score is zero.</p>
         </div>
-    
-        <div class="row">
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
+        <div class="box" id="clickHelp">
+            <p>Click for help.</p>
         </div>
-  
-        <div class="row">
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-         </div>
-    
-        <div class="row">
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
+        <div class="box" id="help">
+            <p>Help report</p>
         </div>
-   
         <div class="row">
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        </div>
-  
-        <div class="row">
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
-        <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
         </div>
 
+        <div class="row">
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+        </div>
 
-        </main>
+        <div class="row">
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+        </div>
+
+        <div class="row">
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+        </div>
+
+        <div class="row">
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+        </div>
+
+        <div class="row">
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+        </div>
+
+        <div class="row">
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+            <div class="location"><img src="Building.jpg" alt="Building"></div>
+        </div>
+
+
+    </main>
 
 
 
- </body>
-  
- </html>
- 
- 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>
