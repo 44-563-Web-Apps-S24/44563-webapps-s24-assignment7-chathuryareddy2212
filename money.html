@@ -172,66 +172,60 @@
 
 
              function check(position) {
-                if (gameOver)
-                    return;
+             if (!gameOver) {
                 var id = ids[position];
                 var img = document.getElementById(id);
-                console.log("Check function executed for position:", position);
-                console.log("img.src before change:", img.src);
-                if (position == monsterLocation) {
+                if (fancyCoinLocations.includes(position)) {
+                    img.src = "Fancier coin.jpg";
+                    locations + 1;
+                    score += 3;
+                } else if (position === monsterLocation) {
                     img.src = "monster.jpg";
+                    locations + 1;
                     gameOver = true;
-                    score = score - 5; 
-                } else if (fancyCoinLocations.includes(position)) {
-                    img.src = "fancier coin.jpg"
-                    score += 3; 
+                    score -= 5;
                 } else {
                     img.src = "coin.jpg";
-                    score += 1; 
+                    locations + 1;
+                    score += 1;
                 }
                 locations++;
-                document.getElementById("locations").textContent = "Number of locations checked is " + locations + ".";
+                document.getElementById("locations").innerText = "Number of locations checked is " + locations + ".";
+                console.log(location);
+                console.log(score);
+                document.getElementById("score").innerText = "Score is " + score + ".";
                 lastLocation = position;
-                document.getElementById("score").textContent = "Score is " + score;
-                console.log("img.src after change:", img.src);
-    
-             }
+                if (position === monsterLocation) {
+                    document.getElementById("help").innerText = "Monster found! Game over.";
+                }
+            }
+        }
 
+        function help() {
+            var row = Math.floor(lastLocation / 5);
+            var col = lastLocation % 5;
+            var result = "All clear";
 
-             function help() {
-                var row = Math.floor(lastLocation / 5);
-                var col = lastLocation % 5;
-                var monsterRow = Math.floor(monsterLocation / 5);
-                var monsterCol = monsterLocation % 5;
-    
-                var kinshipLocations = [
-                    lastLocation - 1, // Left
-                    lastLocation + 1, // Right
-                    lastLocation - 5, // Up
-                    lastLocation + 5  // Down
-                ];
-    
+            if (fancyCoinLocations.includes(lastLocation)) {
+                result = "So close";
+            } else {
+                var kinshipLocations = [lastLocation - 1, lastLocation + 1, lastLocation - 5, lastLocation + 5];
                 for (var i = 0; i < kinshipLocations.length; i++) {
-                    var kinLocation = kinshipLocations[i];
-                    if (fancyCoinLocations.includes(kinLocation)) {
-                        document.getElementById("help").textContent = "So close";
-                        return;
+                    if (fancyCoinLocations.includes(kinshipLocations[i])) {
+                        result = "So close";
+                        break;
                     }
                 }
-    
-                if (Math.abs(row - monsterRow) <= 1 && Math.abs(col - monsterCol) <= 1) {
-                    document.getElementById("help").textContent = "Grrr";
-                    return;
-                }
-    
-                
-                document.getElementById("help").textContent = "All clear";
-    
-    
             }
-        </script>
 
+            if (Math.abs(row - Math.floor(monsterLocation / 5)) <= 1 && Math.abs(col - (monsterLocation % 5)) <= 1) {
+                result = "Grrr";
+            }
 
-</body>
+            document.getElementById("help").innerText = result;
+        }
+    </script>
+
+    </body>
 
 </html>
