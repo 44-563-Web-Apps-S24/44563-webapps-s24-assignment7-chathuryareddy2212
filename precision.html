@@ -14,16 +14,17 @@
 <body>
 
   <h1>Chathurya Reddy Aenugu Speed check</h1>
-  <div id="target">Your time</div>
-  <div id="counter">Count</div>
 
-  <button type="button" id="startBtn" onclick="startTime()">Start timer</button>
-  <button type="button" id="stopBtn" onclick="recordTime()">Stop timer</buttonn>
+  <div id="target">Your time:</div>
+  <div id="counter">Count:</div>
+
+  <button onclick="startTime()">Start timer</button>
+  <button onclick="recordTime()">Stop timer</buttonn>
   
 
   <script>
 
-    let stopTime = undefined;
+    let stopTime;
 
     function recordTime() {
       stopTime = Date.now();
@@ -33,17 +34,16 @@
     function startTime() {
       for (let i = 0; i < 5; i++) {
         setTimeout(() => {
-          document.getElementById("target").innerHTML = `<div>Your time: ${i}</div>`
+          document.getElementById("counter").innerHTML = i;
         }, ((4 - i) * 1000))
       }
       setTimeout(()=> {
-      if (stopTime == undefined) {
-        document.getElementById("target").innerText = "Too Slow";
+      if (stopTime === undefined) {
+        document.getElementById("target").innerHTML = "Too Slow";
       }
       else {
-        stopTime2 = Date.now();
-        let elapsedTime = stopTime - stopTime2;
-        document.getElementById("target").innerText = "Time was " + elapsedTime;
+        let elapsedTime = (Date.now() - stopTime) / 1000;
+        document.getElementById("target").innerHTML = "Time was " + elapsedTime.toFixed(3) + " seconds";
       }
     }, 4000)
     }
