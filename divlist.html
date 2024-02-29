@@ -30,7 +30,8 @@
     <button onclick="makeNewDiv()">Add end</button>
     <button onclick="addFront()">Add front</button>
     <button onclick="remove()">Remove</button>
-    <button onclick="swapElements()">Swap</button>
+    <button onclick="swapItems()">Swap</button>
+
     <div class="flex-container" id="target">
         <div class="divlist">First item</div>
         <div class="divlist">Second item</div>
@@ -39,6 +40,7 @@
 </div>
 
 <script>
+
     function makeNewDiv() {
         let element = document.createElement("div")
         element.innerHTML = document.getElementById('text').value
@@ -66,21 +68,37 @@
         container.insertBefore(element, container.firstChild);
      }
 
-     function swapElements() {
-        let divListItems = document.getElementsByClassName('divlist');
-        let length = divListItems.length;
+     function swapItems() {
+        const items = document.getElementsByClassName('divlist');
+        const itemCount = items.length;
 
-        if (length >= 2) {
-            let index1 = Math.floor(Math.random() * length);
-            let index2 = Math.floor(Math.random() * (length - 1));
-            index2 = (index2 >= index1) ? index2 + 1 : index2;
+        if (itemCount > 1) {
+            
+            let index1 = Math.floor(Math.random() * itemCount);
+            let index2 = Math.floor(Math.random() * itemCount);
+            while (index2 === index1) {
+                index2 = Math.floor(Math.random() * itemCount);
+            }
 
-            let temp = divListItems[index1].cloneNode(true);
-            divListItems[index1].replaceWith(divListItems[index2].cloneNode(true));
-            divListItems[index2].replaceWith(temp);
+           
+            const item1 = items[index1];
+            const item2 = items[index2];
+
+            
+            const parent = item1.parentNode;
+            const nextItem = item2.nextSibling;
+
+            parent.insertBefore(item2, item1);
+            nextItem ? parent.insertBefore(item1, nextItem) : parent.appendChild(item1);
         }
     }
     
+    
+    
+    
+    
+
+     
 </script>
 
 </body>

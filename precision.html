@@ -19,10 +19,15 @@
   <div id="counter">Count:</div>
 
   <button onclick="startTime()">Start timer</button>
-  <button onclick="recordTime()">Stop timer</buttonn>
-  
+  <button onclick="recordTime()">Stop timer</button>
+  <button onclick="startRandomTimer()">Start Timer</button>
 
   <script>
+
+ function startRandomTimer() {
+        const countdownValue = Math.floor(Math.random() * 9) + 2; 
+ }
+
 
     let stopTime;
 
@@ -47,6 +52,7 @@
       }
     }, 4000)
     }
+
 
 
   </script>
